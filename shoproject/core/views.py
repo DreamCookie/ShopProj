@@ -1,8 +1,12 @@
 from django.shortcuts import render
-
+from store.models import Product
 
 def frontpage(request):
-    return render(request, 'core/frontpage.html')
+    products = Product.objects.all()[0:5]
+    return render(request, 'core/frontpage.html',
+                  {
+                      'products': products
+                  })
 
 
 def about(request):

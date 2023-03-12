@@ -4,10 +4,10 @@ Progress-list:
 3. Init DB, superuser, test runs -> DONE
 4. Create core app for pages -> DONE
 5. Create app for user profiles -> DONE
-6. Create app for products (with categories)2547
-7. Listing products on front page
-8. Detail info for products
-9. Category view
+6. Create app for products (with categories) "store" -> DONE
+7. Listing products on front page -> DONE
+8. Detail info for products -> DONE
+9. Category view -> DONE
 10. Search functionality
 11. Vendor detail page
 12. Registration, login, logout
