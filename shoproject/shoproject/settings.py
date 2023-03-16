@@ -26,8 +26,8 @@ SECRET_KEY = 'django-insecure-c9)ej@1r(!gx0u6++v(9v#0s(w2n+h)$4#)z7ix-1z$@^p!!wl
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
-
+LOGIN_REDIRECT_URL = 'my_account'
+LOGOUT_REDIRECT_URL = 'frontpage'
 # Application definition
 
 INSTALLED_APPS = [

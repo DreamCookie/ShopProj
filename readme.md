@@ -11,11 +11,12 @@ Progress-list:
 10. Show vendor on product detail page -> DONE
 11. add images to the products -> DONE 
 12. Vendor detail page  -> DONE 
-13. Registration, login, logout 
-14. Create account page 
-15. Search functionality 
-16. Cart (add products, view cart etc)
-17. Checkout 
-18. Payment gateway? 
-19. Admin pages for vendors 
-20. Deploy project
+13. Registration, login, logout -> DONE 
+14. Create account page -> DONE (basics, upd later)
+15. Search functionality -> DONE 
+16. Admin pages for vendors 
+17. Cart (add products, view cart etc)
+18. Checkout 
+19. Payment gateway? 
+20. Admin pages for vendors 
+21. Deploy project
