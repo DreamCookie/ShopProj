@@ -14,7 +14,7 @@ Progress-list:
 13. Registration, login, logout -> DONE 
 14. Create account page -> DONE (basics, upd later)
 15. Search functionality -> DONE 
-16. Admin pages for vendors -> 70% DONE
+16. Admin pages for vendors -> DONE 
 17. Cart (add products, view cart etc)
 18. Checkout 
 19. Payment gateway? 

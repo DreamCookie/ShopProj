@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
@@ -8,17 +9,24 @@ from .models import Userprofile
 from store.forms import ProductForm
 from store.models import Product, Category
 
+
 def vendor_detail(request, pk):
     user = User.objects.get(pk=pk)
+    products = user.products.filter(status=Product.ACTIVE)
     return render(request, 'userprofile/vendor_detail.html',
                   {
-                      'user': user
+                      'user': user,
+                      'products': products
                   })
 
 
 @login_required
 def my_store(request):
-    return render(request, 'userprofile/my_store.html')
+    products = request.user.products.exclude(status=Product.DELETED)
+
+    return render(request, 'userprofile/my_store.html', {
+        'products': products
+    })
 
 
 @login_required
@@ -32,7 +40,7 @@ def add_product(request):
             product.user = request.user
             product.slug = slugify(title)
             product.save()
-
+            messages.success(request, 'The product was added.')
             return redirect('my_store')
     else:
         form = ProductForm()
@@ -52,14 +60,25 @@ def edit_product(request, pk):
 
         if form.is_valid():
             form.save()
+            messages.success(request, 'The product was edited.')
             return redirect('my_store')
     else:
         form = ProductForm(instance=product)
 
     return render(request, 'userprofile/add_product.html',{
                     'title': 'Edit product',
+                    'product':product,
                     'form': form
                   })
+
+
+@login_required
+def delete_product(request, pk):
+    product = Product.objects.filter(user=request.user).get(pk=pk)
+    product.status = Product.DELETED
+    product.save()
+    messages.success(request, 'The product was deleted.')
+    return redirect('my_store')
 
 
 @login_required
